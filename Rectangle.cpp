@@ -7,7 +7,7 @@
 
 Rectangle::Rectangle(sf::Transformable tr) {
 	sf::RectangleShape initial_rect(sf::Vector2f(100, 100));
-	initial_rect.setFillColor(sf::Color::Magenta);
+	initial_rect.setFillColor(sf::Color(201, 139, 240));
 	initial_rect.setPosition(tr.getPosition());
 	rect = initial_rect;
 }
