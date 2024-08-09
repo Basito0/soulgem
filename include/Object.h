@@ -1,16 +1,19 @@
 #pragma once
+#include "Rectangle.h"
 #include <string>
+#include <vector>
 #include <SFML/Graphics.hpp>
 
-class Object {
+
+class Object : public sf::Transformable {
 public:
     std::string name;
-    bool hasComponent(std::string);
-    void addComponent(std::string);
-    void setRect(sf::RectangleShape r);
-    sf::RectangleShape getRect();
     Object();
-private:
-    std::map<std::string, int> dictionary;
-    sf::RectangleShape rect;
+    void addComponent(std::string, std::string);
+    bool hasComponent(std::string);
+    bool hasComponentName(std::string, std::string);
+    Rectangle getRectangle(std::string);
+
+    std::vector<Rectangle> rectangleList;
+
 };
